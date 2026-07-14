@@ -1,6 +1,6 @@
-import { HomeCheckIns } from "./check-ins";
-import { HomeGlobalStats } from "./global-stats";
-import { HomeUserStats } from "./user-stats";
+import { HomeCheckIns } from "@/app/home//check-ins";
+import { HomeGlobalStats } from "@/app/home/global-stats";
+import { HomeUserStats } from "@/app/home//user-stats";
 
 export const Home = () => {
   return (

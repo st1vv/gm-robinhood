@@ -1,5 +1,5 @@
-import { Home } from "./home/home";
-import { Layout } from "./layout/layout";
+import { Home } from "@/app/home/home";
+import { Layout } from "@/app/layout/layout";
 
 export const App = () => {
   return (

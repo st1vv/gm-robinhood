@@ -1,4 +1,4 @@
-import { WalletButton } from "../../shared/wallet-button";
+import { WalletButton } from "@/shared/wallet-button";
 
 export const Header = () => {
   return (

@@ -1,6 +1,6 @@
 import { createConfig, http } from "wagmi";
 import { injected, metaMask, coinbaseWallet } from "wagmi/connectors";
-import { robinhoodTestnet } from "./chain-config";
+import { robinhoodTestnet } from "@/libs/chain-config";
 
 export const wagmiConfig = createConfig({
   chains: [robinhoodTestnet],

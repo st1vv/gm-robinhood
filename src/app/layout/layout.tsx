@@ -1,5 +1,5 @@
-import { Footer } from "./footer";
-import { Header } from "./header";
+import { Footer } from "@/app/layout/footer";
+import { Header } from "@/app/layout/header";
 import type { ReactNode } from "react";
 
 type LayoutType = {

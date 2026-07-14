@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useAccount, useConnect, useDisconnect, useSwitchChain } from "wagmi";
-import { robinhoodTestnet } from "../libs/chain-config";
+import { robinhoodTestnet } from "@/libs/chain-config";
 
 function truncateAddress(addr: string) {
   return `${addr.slice(0, 6)}…${addr.slice(-4)}`;

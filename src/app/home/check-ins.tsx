@@ -1,4 +1,4 @@
-import { StandartButton } from "../../shared/standard-button";
+import { StandartButton } from "@/shared/standard-button";
 
 interface HomeCheckInsProps {
   onCheckIn: () => void;
