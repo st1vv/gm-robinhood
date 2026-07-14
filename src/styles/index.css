@@ -2,10 +2,22 @@
 
 @theme {
   --font-sans: "Space Grotesk", system-ui, sans-serif;
-  --color-lime: rgb(190, 240, 20);
+  --color-lime: #ccff00;
+}
+
+html,
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 body {
+  margin: 0;
   font-family: var(--font-sans);
-  background-color: #0b0e11;
+  background-color: var(--color-lime);
+  color: #110e08;
 }

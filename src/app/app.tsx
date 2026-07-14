@@ -1,3 +1,9 @@
+import { Layout } from "./layout/layout";
+
 export const App = () => {
-  return <div></div>;
+  return (
+    <Layout>
+      <div>flex</div>
+    </Layout>
+  );
 };
