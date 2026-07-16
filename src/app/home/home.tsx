@@ -4,7 +4,7 @@ import { HomeUserStats } from "@/app/home//user-stats";
 
 export const Home = () => {
   return (
-    <div className="w-full max-w-md mx-auto flex flex-col items-center gap-8">
+    <div className="w-full max-w-md mx-auto flex flex-col items-center gap-6">
       <HomeGlobalStats totalFree={128} totalPremium={34} />
       <div className="w-full flex flex-col items-center gap-6">
         <HomeCheckIns
