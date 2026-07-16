@@ -8,7 +8,7 @@ export const HomeUserStats = ({
   premiumCount,
 }: HomeUserStatsProps) => {
   return (
-    <div className="w-full flex gap-3">
+    <div className="w-full flex flex-col gap-3 sm:flex-row">
       <StatBox label="Your GM" value={freeCount} />
       <StatBox label="Your Premium GM" value={premiumCount} />
     </div>
