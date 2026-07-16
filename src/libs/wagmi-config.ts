@@ -1,14 +1,37 @@
 import { createConfig, http } from "wagmi";
-import { injected, metaMask, coinbaseWallet } from "wagmi/connectors";
 import { robinhoodTestnet } from "@/libs/chain-config";
+import { connectorsForWallets } from "@rainbow-me/rainbowkit";
+import {
+  metaMaskWallet,
+  rabbyWallet,
+  injectedWallet,
+  okxWallet,
+  binanceWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+import { REOWN_PROJECT_ID } from "@/constants/constants";
+
+const connectors = connectorsForWallets(
+  [
+    {
+      groupName: "Popular",
+      wallets: [
+        metaMaskWallet,
+        rabbyWallet,
+        okxWallet,
+        binanceWallet,
+        injectedWallet,
+      ],
+    },
+  ],
+  {
+    appName: "GM Robinhood",
+    projectId: REOWN_PROJECT_ID,
+  },
+);
 
 export const wagmiConfig = createConfig({
+  connectors,
   chains: [robinhoodTestnet],
-  connectors: [
-    injected(),
-    metaMask(),
-    coinbaseWallet({ appName: "GM Robinhood" }),
-  ],
   transports: {
     [robinhoodTestnet.id]: http(),
   },
