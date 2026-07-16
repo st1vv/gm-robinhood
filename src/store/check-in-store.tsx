@@ -18,6 +18,7 @@ import {
   CHECKIN_ADDRESS,
   PREMIUM_CHECKIN_ADDRESS,
 } from "@/constants/constants";
+import { toast } from "sonner";
 
 type BusyKind = "free" | "premium" | null;
 
@@ -34,7 +35,6 @@ type FinalState = {
   isPremiumLoading: boolean;
   checkInLabel: string;
   premiumLabel: string;
-  error: string | null;
 };
 
 const Context = createContext<FinalState | null>(null);
@@ -55,9 +55,7 @@ export function CheckInStoreProvider({ children }: { children: ReactNode }) {
   const { writeContractAsync } = useWriteContract();
 
   const [busyKind, setBusyKind] = useState<BusyKind>(null);
-  const [error, setError] = useState<string | null>(null);
 
-  // Тікаючий годинник раз на хвилину — досить для відображення годин.
   const [now, setNow] = useState(() => Math.floor(Date.now() / 1000));
   useEffect(() => {
     const id = setInterval(() => setNow(Math.floor(Date.now() / 1000)), 60_000);
@@ -138,15 +136,15 @@ export function CheckInStoreProvider({ children }: { children: ReactNode }) {
       (err as { shortMessage?: string; message?: string })?.shortMessage ??
       (err as Error)?.message ??
       fallback;
+
     if (/TooSoon/.test(msg))
-      setError("Already checked in today for this type. Try again later.");
+      toast.error("Already checked in today. Try again later!");
     else if (/InsufficientPayment/.test(msg))
-      setError("Not enough ETH to cover the premium price.");
-    else setError(msg);
+      toast.error("Not enough ETH to cover the premium price!");
+    else toast.error(msg);
   };
 
   const onCheckIn = async () => {
-    setError(null);
     setBusyKind("free");
     try {
       const hash = await writeContractAsync({
@@ -156,15 +154,15 @@ export function CheckInStoreProvider({ children }: { children: ReactNode }) {
       });
       await waitForTransactionReceipt(config, { hash });
       await refetch();
+      toast.success("GM complete!");
     } catch (err) {
-      handleError(err, "Transaction failed");
+      handleError(err, "Transaction failed!");
     } finally {
       setBusyKind(null);
     }
   };
 
   const onPremiumCheckIn = async () => {
-    setError(null);
     setBusyKind("premium");
     try {
       const hash = await writeContractAsync({
@@ -175,8 +173,9 @@ export function CheckInStoreProvider({ children }: { children: ReactNode }) {
       });
       await waitForTransactionReceipt(config, { hash });
       await refetch();
+      toast.success("Premium GM complete!")
     } catch (err) {
-      handleError(err, "Premium transaction failed");
+      handleError(err, "Premium transaction failed!");
     } finally {
       setBusyKind(null);
     }
@@ -214,7 +213,6 @@ export function CheckInStoreProvider({ children }: { children: ReactNode }) {
       : isConnected
         ? `Next Premium GM in ${formatCountdown(secondsUntilPremium)}`
         : "Connect wallet for Premium GM",
-    error,
   };
 
   return <Context.Provider value={finalState}>{children}</Context.Provider>;
