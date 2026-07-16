@@ -18,7 +18,7 @@ export const WalletButton = () => {
             onClick={onClick}
             className="px-3 sm:px-4 flex gap-2 items-center"
           >
-            <WalletIcon className="w-6 h-6 text-lime sm:hidden" />
+            <WalletIcon className="w-6 h-6 text-lime" />
             <span className="hidden sm:inline">{label}</span>
           </StandartButton>
         );
