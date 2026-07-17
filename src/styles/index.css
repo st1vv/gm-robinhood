@@ -14,11 +14,12 @@ body {
 
 #root {
   min-height: 100vh;
+  background-color: var(--color-lime);
 }
 
 body {
   margin: 0;
+  min-width: 320px;
   font-family: var(--font-sans);
-  background-color: var(--color-lime);
   color: var(--color-ink);
 }

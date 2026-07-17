@@ -19,7 +19,7 @@ export const Home = () => {
     premiumLabel,
   } = useCheckInStore();
   return (
-    <div className="w-full max-w-md mx-auto flex flex-col items-center gap-6">
+    <div className="w-full max-w-md lg:max-w-xl mx-auto flex flex-col items-center gap-6">
       <HomeGlobalStats
         totalFree={totalFree || 0}
         totalPremium={totalPremium || 0}

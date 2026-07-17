@@ -23,8 +23,8 @@ type StatRowProps = {
 const StatRow = ({ label, value }: StatRowProps) => {
   return (
     <div className="w-full flex items-baseline justify-between">
-      <span className="w-full text-sm text-ink/60">{label}</span>
-      <span className="w-full text-end font-mono text-sm font-semibold text-ink">
+      <span className="w-full text-sm lg:text-base text-ink/60">{label}</span>
+      <span className="w-full text-end font-mono text-sm lg:text-base font-semibold text-ink">
         {value}
       </span>
     </div>

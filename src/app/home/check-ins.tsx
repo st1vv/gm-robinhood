@@ -25,7 +25,7 @@ export const HomeCheckIns = ({
     <div className="w-full flex flex-col gap-3">
       <StandartButton
         variant="primary"
-        className="w-full"
+        className="w-full lg:h-16 lg:text-base"
         onClick={onCheckIn}
         disabled={isCheckInDisabled}
         isLoading={isCheckInLoading}
@@ -35,7 +35,7 @@ export const HomeCheckIns = ({
 
       <StandartButton
         variant="special"
-        className="w-full"
+        className="w-full lg:h-16 lg:text-base"
         onClick={onPremiumCheckIn}
         disabled={isPremiumDisabled}
         isLoading={isPremiumLoading}
