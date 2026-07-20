@@ -1,9 +1,12 @@
 import { WalletButton } from "@/shared/wallet-button";
+import LogoIcon from "@/assets/logo.svg?react";
 
 export const Header = () => {
   return (
     <header className="border-b border-ink/10 px-6 py-2 flex items-center justify-between">
-      <span className="font-semibold tracking-tight text-base lg:text-lg">GM Robinhood</span>
+      <a href="/">
+        <LogoIcon className="w-auto h-[26px]" />
+      </a>
       <div className="flex items-center gap-4">
         <div className="hidden sm:flex flex flex-col items-center">
           <span className="text-xs lg:text-sm font-mono uppercase tracking-wider text-ink/60">
