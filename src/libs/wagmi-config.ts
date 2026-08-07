@@ -1,5 +1,5 @@
 import { createConfig, http } from "wagmi";
-import { robinhoodTestnet } from "@/libs/chain-config";
+import { robinhoodMainnet } from "@/libs/chain-config";
 import { connectorsForWallets } from "@rainbow-me/rainbowkit";
 import {
   metaMaskWallet,
@@ -31,9 +31,9 @@ const connectors = connectorsForWallets(
 
 export const wagmiConfig = createConfig({
   connectors,
-  chains: [robinhoodTestnet],
+  chains: [robinhoodMainnet],
   transports: {
-    [robinhoodTestnet.id]: http(),
+    [robinhoodMainnet.id]: http(),
   },
 });
 
