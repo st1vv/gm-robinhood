@@ -18,7 +18,7 @@ export const Header = () => {
                        px-1 text-[10px] font-bold tracking-wider
                        text-white"
           >
-            testnet
+            mainnet
           </span>
         </div>
         <WalletButton />
