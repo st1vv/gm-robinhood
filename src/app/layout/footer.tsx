@@ -1,13 +1,13 @@
 export const Footer = () => {
   return (
-    <footer className="border-t border-ink/10 px-6 py-4 flex flex-col items-center gap-1 text-center">
-      <p className="text-xs lg:text-sm font-mono text-ink/60">
+    <footer className="border-t border-ink/10 px-6 py-4 flex flex-col items-center text-center">
+      <p className="text-xs lg:text-sm font-mono text-ink/60 leading-relaxed">
         Independent community project by{" "}
         <a
           href="https://x.com/stivcrypto"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-ink font-semibold hover:opacity-70 transition-opacity"
+          className="max-w-md text-ink font-semibold hover:opacity-70 transition-opacity"
         >
           {"[cryptostiv]"}
         </a>
