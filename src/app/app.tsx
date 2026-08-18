@@ -1,10 +1,6 @@
-import { Home } from "@/app/home/home";
-import { Layout } from "@/app/layout/layout";
+import { RouterProvider } from "react-router-dom";
+import { router } from "@/app/router";
 
 export const App = () => {
-  return (
-    <Layout>
-      <Home />
-    </Layout>
-  );
+  return <RouterProvider router={router} />;
 };

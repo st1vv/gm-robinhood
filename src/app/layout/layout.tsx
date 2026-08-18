@@ -1,19 +1,15 @@
 import { Footer } from "@/app/layout/footer";
 import { Header } from "@/app/layout/header";
 import { CheckInTicker } from "@/app/layout/check-in-ticker";
-import type { ReactNode } from "react";
+import { Outlet } from "react-router-dom";
 
-type LayoutType = {
-  children: ReactNode;
-};
-
-export const Layout = ({ children }: LayoutType) => {
+export const Layout = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
       <CheckInTicker />
       <main className="flex-1 flex items-center justify-center px-4 py-12">
-        {children}
+        <Outlet />
       </main>
       <Footer />
     </div>
