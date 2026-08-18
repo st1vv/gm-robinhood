@@ -16,9 +16,9 @@ export const WalletButton = () => {
           <StandartButton
             variant={variant}
             onClick={onClick}
-            className="px-3 sm:px-4 flex gap-2 items-center justify-center w-auto sm:w-[170px]"
+            className="w-12 h-12 p-0 sm:w-[170px] sm:px-4 flex gap-2 items-center justify-center"
           >
-            <WalletIcon className={`w-6 h-6`} />
+            <WalletIcon className="w-6 h-6" />
             <span className="hidden sm:inline">{label}</span>
           </StandartButton>
         );

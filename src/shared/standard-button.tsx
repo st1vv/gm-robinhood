@@ -1,4 +1,5 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 type StandartButtonVariant = "primary" | "secondary" | "special";
 
@@ -30,7 +31,7 @@ export const StandartButton = ({
   return (
     <button
       disabled={disabled || isLoading}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={twMerge(baseStyles, variantStyles[variant], className)}
       {...rest}
     >
       {isLoading ? "Confirming…" : children}

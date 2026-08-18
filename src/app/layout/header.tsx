@@ -1,6 +1,6 @@
 import { WalletButton } from "@/shared/wallet-button";
 import { Link } from "react-router-dom";
-import { Navigation } from "@/app/layout/navigation";
+import { MobileNavigation, DesktopNavigation } from "@/app/layout/navigation";
 import LogoIcon from "@/assets/logo.svg?react";
 
 export const Header = () => {
@@ -12,7 +12,7 @@ export const Header = () => {
         </Link>
       </div>
 
-      <Navigation />
+      <DesktopNavigation />
 
       <div className="flex-1 flex items-center justify-end gap-4">
         <div className="hidden sm:flex flex-col items-center">
@@ -26,7 +26,9 @@ export const Header = () => {
             mainnet
           </span>
         </div>
+
         <WalletButton />
+        <MobileNavigation />
       </div>
     </header>
   );
