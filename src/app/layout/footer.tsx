@@ -2,7 +2,7 @@ export const Footer = () => {
   return (
     <footer className="border-t border-ink/10 px-6 py-4 flex flex-col items-center text-center">
       <p className="text-xs lg:text-sm font-mono text-ink/60 leading-relaxed">
-        Independent community project by{" "}
+        Community project by{" "}
         <a
           href="https://x.com/stivcrypto"
           target="_blank"
@@ -12,10 +12,10 @@ export const Footer = () => {
           {"[cryptostiv]"}
         </a>
       </p>
-      <p className="max-w-md text-xs lg:text-sm font-mono text-ink/60 leading-relaxed">
+      {/* <p className="max-w-md text-xs lg:text-sm font-mono text-ink/60 leading-relaxed">
         Not affiliated with, endorsed by, or connected to Robinhood Markets,
         Inc.
-      </p>
+      </p> */}
     </footer>
   );
 };
