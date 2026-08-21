@@ -7,6 +7,7 @@ import { RainbowKitProvider, darkTheme } from "@rainbow-me/rainbowkit";
 import { CheckInStoreProvider } from "@/store/check-in-store";
 import { Toaster } from "sonner";
 import { App } from "@/app/app";
+import { Analytics } from '@vercel/analytics/react';
 import "@rainbow-me/rainbowkit/styles.css";
 import "@/styles/index.css";
 
@@ -25,6 +26,7 @@ createRoot(document.getElementById("root")!).render(
         <RainbowKitProvider theme={rainbowTheme} modalSize="compact">
           <CheckInStoreProvider>
             <App />
+            <Analytics />
             <Toaster
               position="top-center"
               toastOptions={{
